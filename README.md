@@ -1,1 +1,1 @@
-# contentindication-frontend
+# contentsyndication-frontend
