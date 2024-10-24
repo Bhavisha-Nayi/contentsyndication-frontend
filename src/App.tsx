@@ -1,11 +1,7 @@
-import './App.css';
+import HomePage from "./pages";
 
-function App() {
-  return (
-    <div className="App">
-      <a href='https://contentsyndication.ai/' target='_blank' rel="noreferrer">Contentsyndication</a>
-    </div>
-  );
-}
+const App = () => (
+  <div><HomePage /></div>
+);
 
 export default App;
