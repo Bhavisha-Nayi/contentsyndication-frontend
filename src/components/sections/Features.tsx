@@ -1,65 +1,65 @@
-// FeaturesSection.jsx
-
 import React from 'react';
+import Service from '../cards/Service';
 import Container from '../shared/Container';
 import Paragraph from '../shared/Paragraph';
 import Title from '../shared/Title';
+import { features } from '../../utils/data';
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
-const FeaturesSection = () => {
+const FeatureSection: React.FC = () => {
+  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
-    <section id="features">
-      <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12">
-        
-        <div className="flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
-          <Title>
-            We provide Important Features for Digital Marketing
-          </Title>
-          <Paragraph className="mt-8">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            <br /> 
-            Minus, saepe aliquid autem alias vero distinctio dignissimos consequatur?
-          </Paragraph>
-          <Paragraph className="mt-2">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, saepe aliquid autem alias vero distinctio dignissimos consequatur?
-          </Paragraph>
-          <ul className="mt-8 space-y-4 text-heading-3 font-medium">
-            <li>
-              <span className="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> 
-              Web site Analysis
-            </li>
-            <li>
-              <span className="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> 
-              Free optimization.
-            </li>
-            <li>
-              <span className="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> 
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            </li>
-            <li>
-              <span className="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center">&checkmark;</span> 
-              Content Optimization.
-            </li>
-          </ul>
-        </div>
-
-        <div className="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto">
-          <div className="w-full h-80 sm:h-96 midmd:h-full relative">
-            <div className="absolute rotate-45 -left-5 md:-left-10 lg:-left-20 xl:-left-24 p-1 top-1/2 w-16 h-16 bg-gradient-to-br from-primary to-orange-400 blur-3xl opacity-50"></div>
-            <div className="absolute p-1 -top-4 md:-top-10 right-0 w-20 h-20 bg-gradient-to-br from-primary to-orange-400 rounded-full blur-3xl opacity-60"></div>
-            
-            <span className="absolute w-full aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-tr from-primary to-green-400 opacity-40 blur-2xl left-0 bottom-0"></span>
-            <img 
-              src="/images/dev-with-c.webp" 
-              alt="banner" 
-              width="1240" 
-              height="1385" 
-              className="w-auto left-1/2 -translate-x-1/2 absolute bottom-0 max-h-full" 
-            />
+    <div className="max-w-5xl mx-auto px-8" id="features">
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-5xl font-bold text-gray-900">Features</h2>
+        <p className="mt-4 text-md text-gray-500">
+        Features That Power Your Content Strategy
+        </p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10 justify-items-center">
+        {features.map((project, idx) => (
+          <div
+            key={project?.title}
+            className="relative group  block p-2 h-full w-full "
+            onMouseEnter={() => setHoveredIndex(idx)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <AnimatePresence>
+              {hoveredIndex === idx && (
+                <motion.span
+                  className="absolute inset-0 h-full w-full bg-slate-800/[0.8] block  rounded-3xl"
+                  layoutId="hoverBackground" // required for the background to follow
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: 1,
+                    transition: { duration: 0.15 },
+                  }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.15, delay: 0.2 },
+                  }}
+                />
+              )}
+            </AnimatePresence>
+            <div className=" rounded-2xl h-full w-full p-4 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-800 border border-transparent group-hover:border-slate-700 relative z-50">
+              <div className="relative z-50">
+                <div className="p-4">
+                  <h4 className="text-zinc-100 font-bold tracking-wide mt-4">
+                    {project.title}
+                  </h4>
+                  <p className="mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm">
+                    {project.description}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </Container>
-    </section>
+        ))}
+      </div>
+    </div>
   );
 };
 
-export default FeaturesSection;
+export default FeatureSection;
