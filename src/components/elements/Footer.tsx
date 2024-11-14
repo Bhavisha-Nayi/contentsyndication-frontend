@@ -42,24 +42,20 @@ const footerSupport = [
 
 const footerCompany = [
   {
-    itemText: "About",
-    itemLink: "/about",
+    itemText: "About us",
+    itemLink: "#about-us",
+  },
+  {
+    itemText: "Services",
+    itemLink: "#services",
+  },
+  {
+    itemText: "Features",
+    itemLink: "#features",
   },
   {
     itemText: "Blog",
-    itemLink: "#",
-  },
-  {
-    itemText: "Jobs",
-    itemLink: "#",
-  },
-  {
-    itemText: "Parteners",
-    itemLink: "#",
-  },
-  {
-    itemText: "Jobs",
-    itemLink: "#",
+    itemLink: "/blog",
   },
 ];
 const footerLegal = [
@@ -110,13 +106,20 @@ const Footer = () => {
                     <span className="absolute w-2 h-2 rounded-full bg-heading-1 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></span>
                   </div>
                   <div className="inline-flex text-lg font-semibold text-heading-1">
-                    AgenceX
+                    Contentsyndication
                   </div>
                 </a>
-                <Paragraph className={"mt-8"}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Beatae, maiores nam doloribus id magni
-                </Paragraph>
+                <p className="mt-8 text-gray-700">
+                  B2B Connect Hub is a global digital platform that publishes
+                  content related to technology and business insights from
+                  industry experts.
+                </p>
+                <br />
+                <p className="text-gray-700">
+                Get the latest news, discussions & strategic
+                  expertise with thoughts and assessments on business
+                  challenges.
+                </p>
               </div>
 
               <div className="min-h-max flex items-center gap-4 text-heading-3 mt-8">
@@ -205,7 +208,8 @@ const Footer = () => {
           <Container>
             <div className="flex justify-between items-center gap-6 md:text-lg text-heading-3">
               <div>
-                &copy; <span id="year"></span> AgenceX. All right reserved
+                &copy; <span id="year"></span> Contentsyndication. All right
+                reserved
               </div>
               <div>
                 Proudly made by{" "}
