@@ -8,7 +8,7 @@ import CTA from '../components/sections/CTA';
 
 const HomePage = () => {
     return (
-        <Layout title="Welcome to AgenceX">
+        <Layout title="Welcome to Contentsyndication">
             <main className="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
                 <Hero />
                 <AboutUs />

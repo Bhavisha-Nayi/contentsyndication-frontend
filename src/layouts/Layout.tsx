@@ -8,11 +8,9 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
-
   return (
     <div className={`overflow-hidden overflow-y-auto bg-body`}>
-      <Header 
-      />
+      <Header />
       {children}
       <Footer />
     </div>

@@ -7,14 +7,14 @@ export interface Props {
 
 const NavItem: React.FC<Props> = ({ href, text }) => {
   return (
-    <li>
+    <ul><li>
       <a
         href={href}
         className="duration-300 font-medium ease-linear hover:text-primary py-3"
       >
         {text}
       </a>
-    </li>
+    </li></ul>
   );
 };
 

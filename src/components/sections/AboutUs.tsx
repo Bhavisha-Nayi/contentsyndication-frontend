@@ -11,7 +11,7 @@ const HowItWorks = () => {
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-5xl font-bold text-gray-900">About Us</h2>
         <p className="mt-4 text-md text-gray-500">
-          B2B Connect Hub is a global digital platform that publishes content
+          ContentSyndication is a global digital platform that publishes content
           related to technology and business insights from industry experts.
         </p>
       </div>
@@ -35,7 +35,7 @@ const HowItWorks = () => {
             Life is more interesting with every news
           </h2>
           <p className="mt-4 text-md text-gray-500">
-            B2B Connect Hub is a global digital platform that publishes content
+            Contentsyndication is a global digital platform that publishes content
             related to technology and business insights from industry experts.
           </p>
           <p className="mt-4 text-md text-gray-500">
@@ -46,11 +46,11 @@ const HowItWorks = () => {
       </Container>
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-gray-900">
-          Analyzing the B2B Connect Hub: A Digital Platform for Business
+          Analyzing the Contentsyndication: A Digital Platform for Business
           Insights
         </h2>
         <p className="mt-4 text-lg text-gray-500">
-          Based on the description, B2B Connect Hub seems to be a valuable
+          Based on the description, Contentsyndication seems to be a valuable
           resource for professionals looking to stay updated on the latest
           trends in technology and business. Here’s a breakdown of its key
           features:
@@ -102,7 +102,7 @@ const HowItWorks = () => {
                 {step === "Global Reach:"
                   ? "The platform's global nature suggests it caters to a diverse audience, offering insights from various regions and perspectives."
                   : step === "Industry Experts:"
-                  ? "By featuring content from industry experts, B2B Connect Hub provides authoritative and in-depth analysis on business challenges."
+                  ? "By featuring content from industry experts, Contentsyndication provides authoritative and in-depth analysis on business challenges."
                   : step === "Diverse Content:"
                   ? "The platform likely offers a variety of content formats, such as articles, blog posts, interviews, and webinars, to cater to different learning styles and preferences."
                   : "The focus on 'thoughts and assessments' indicates that the platform provides strategic insights and actionable advice for businesses."}
