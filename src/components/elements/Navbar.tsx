@@ -7,16 +7,16 @@ import NavItem from "../shared/Navitem";
 const navItems = [
   { href: "#about-us", text: "About us" },
   {
-    href: "#services",
+    href: "/services",
     text: "Services",
     subItems: [
-      { href: "/linkedin-lead-generation", text: "LinkedIn Lead Generation" },
-      { href: "/cold-email-lead-generation", text: "Cold Email Lead Generation" },
+      { href: "/services/linkedin-lead-generation", text: "LinkedIn Lead Generation" },
+      { href: "/services/cold-email-lead-generation", text: "Cold Email Lead Generation" },
     ],
   },
   { href: "#features", text: "Features" },
   { href: "/blog", text: "Blog" },
-  { href: "/sign-in", text: "Login" },
+  { href: "/signin", text: "Login" },
 ];
 
 const Header: React.FC = () => {
@@ -152,12 +152,12 @@ const Header: React.FC = () => {
               >
                 <NavItem {...item} />
                 {item.subItems && (
-                  <ul className="absolute left-0 mt-2 w-44 bg-white shadow-md rounded-md z-10 hidden group-hover:block">
+                  <ul className="absolute left-0 mt-2 w-52 text-center bg-white shadow-md rounded-md z-10 hidden group-hover:block">
                     {item.subItems.map((subItem) => (
                       <li key={subItem.text}>
                         <a
                           href={subItem.href}
-                          className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-200 hover:text-primary rounded-md transition-all duration-200"
+                          className="block px-4 py-2 text-xs text-gray-600 hover:bg-gray-200 hover:text-primary rounded-md transition-all duration-200"
                           onClick={handleNavItemClick}
                         >
                           {subItem.text}

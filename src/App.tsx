@@ -1,46 +1,49 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import HomePage from './pages'; // HomePage for unauthenticated users
-import LoginPage from './pages/LoginPage'; // LoginPage component
-import Dashboard from './pages/Dashboard'; // Dashboard for authenticated users
-import NotFoundPage from './pages/NotFoundPage'; // Optional: 404 page
+import HomePage from './pages';
+import LoginPage from './pages/LoginPage';
+import Dashboard from './pages/Dashboard';
+import NotFoundPage from './pages/NotFoundPage';
+import SignUpPage from './pages/SignUp';
+import { AuthProvider, useAuth } from './context/AuthContext'; // Adjust path as needed
+import Services from './pages/Services';
+import ServiceDetailPage from './pages/Services/ServiceDetailPage';
 
-// Simulate an authentication check (replace with your actual auth logic)
-const isAuthenticated = () => {
-  return !!localStorage.getItem('authToken'); // Example: check for an auth token in local storage
+const AppRoutes = () => {
+  const { isAuthenticated } = useAuth();
+
+  return (
+    <Routes>
+      <Route path="/" element={isAuthenticated ? <Dashboard /> : <HomePage />} />
+      <Route path="/signin" element={isAuthenticated ? <Navigate to="/" replace /> : <LoginPage />} />
+      <Route path="/signup" element={isAuthenticated ? <Navigate to="/" replace /> : <SignUpPage />} />
+      
+      {/* Public routes only accessible if not authenticated */}
+      {!isAuthenticated && (
+        <>
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:servicedetail" element={<ServiceDetailPage />} />
+        </>
+      )}
+      
+      {/* Redirect any authenticated user trying to access public pages */}
+      {isAuthenticated && (
+        <>
+          <Route path="/services/*" element={<Navigate to="/" replace />} />
+        </>
+      )}
+
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
+  );
 };
 
 const App = () => (
-  <Router>
-    <Routes>
-      {/* Root path ("/") that behaves differently based on authentication */}
-      <Route
-        path="/"
-        element={
-          isAuthenticated() ? (
-            <Dashboard /> // Show Dashboard if the user is authenticated
-          ) : (
-            <HomePage /> // Show HomePage if the user is not authenticated
-          )
-        }
-      />
-
-      {/* Public route for the login page */}
-      <Route
-        path="/sign-in"
-        element={
-          isAuthenticated() ? (
-            <Navigate to="/" replace /> // Redirect to Dashboard if already logged in
-          ) : (
-            <LoginPage />
-          )
-        }
-      />
-
-      {/* Optional: 404 route */}
-      <Route path="*" element={<NotFoundPage />} />
-    </Routes>
-  </Router>
+  <AuthProvider>
+    <Router>
+      <AppRoutes />
+    </Router>
+  </AuthProvider>
 );
 
 export default App;
