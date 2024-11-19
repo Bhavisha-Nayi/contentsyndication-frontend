@@ -18,10 +18,8 @@ const HowItWorks = () => {
 
       <Container className="w-full h-full flex flex-col midmd:flex-row gap-10 lg:gap-12 mb-20 p-10">
         <div className="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto h-300 sm:h-96 relative">
-          <div className="absolute rotate-45 -left-5 md:-left-10 lg:-left-20 xl:-left-24 p-1 top-1/2 w-16 h-16 bg-gradient-to-br from-primary to-orange-400 blur-3xl opacity-50"></div>
-          <div className="absolute p-1 -top-4 md:-top-10 right-0 w-20 h-20 bg-gradient-to-br from-primary to-orange-400 rounded-full blur-3xl opacity-60"></div>
 
-          <span className="absolute w-full aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-tr from-primary to-green-400 opacity-40 blur-2xl left-0 bottom-0"></span>
+          <span className="absolute w-full aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-tr from-customBlue to-customOrange opacity-60 blur-2xl -left-10 md:-left-20 lg:-left-10 xl:-left-24"></span>
           <div className="relative flex flex-1 lg:w-1/2 mx-auto lg:mx-0 max-w-2xl bg-white p-4 rounded-lg shadow-xl">
           <img
             src="https://b2bconnecthub.com/wp-content/uploads/2024/08/successful-company-with-happy-employees-in-modern-office.jpg"

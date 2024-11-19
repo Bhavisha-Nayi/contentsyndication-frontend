@@ -8,13 +8,15 @@ import SignUpPage from './pages/SignUp';
 import { AuthProvider, useAuth } from './context/AuthContext'; // Adjust path as needed
 import Services from './pages/Services';
 import ServiceDetailPage from './pages/Services/ServiceDetailPage';
+import { SidebarDemo } from './components/elements/sidebardemo';
+// import { SidebarDemo } from './components/elements/sidebardemo';
 
 const AppRoutes = () => {
   const { isAuthenticated } = useAuth();
 
   return (
     <Routes>
-      <Route path="/" element={isAuthenticated ? <Dashboard /> : <HomePage />} />
+      <Route path="/" element={isAuthenticated ? <SidebarDemo /> : <HomePage />} />
       <Route path="/signin" element={isAuthenticated ? <Navigate to="/" replace /> : <LoginPage />} />
       <Route path="/signup" element={isAuthenticated ? <Navigate to="/" replace /> : <SignUpPage />} />
       
