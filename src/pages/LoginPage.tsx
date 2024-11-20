@@ -35,9 +35,9 @@ const LoginPage = () => {
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-sm p-8 space-y-6 bg-white shadow-lg rounded-lg">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-2">Welcome</h1>
+          <h1 className="text-2xl font-bold mb-2">Login</h1>
           <a href='/' className="mt-2">
-          <div className="text-base font-bold text-white bg-gradient-to-r from-blue-500 to-purple-500 opacity-70 rounded-lg hover:opacity-90 w-40 flex items-center justify-center mx-auto">Contentsyndication</div>
+          <div className="text-base font-bold text-white bg-gradient-to-r from-customBlue to-customOrange opacity-70 rounded-lg hover:opacity-90 w-40 flex items-center justify-center mx-auto">Contentsyndication</div>
           </a>
         </div>
         <form className="space-y-4" onSubmit={handleSubmit}>
@@ -50,7 +50,7 @@ const LoginPage = () => {
               id="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 mt-1 text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-4 py-2 mt-1 text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-customBlue"
               placeholder="Enter your email"
             />
           </div>
@@ -63,13 +63,13 @@ const LoginPage = () => {
               id="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full px-4 py-2 mt-1 text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              className="w-full px-4 py-2 mt-1 text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-customBlue"
               placeholder="Enter your password"
             />
           </div>
           <button
             type="submit"
-            className="w-full py-2 text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg hover:opacity-90"
+            className="w-full py-2 text-white bg-gradient-to-r from-customBlue to-customOrange rounded-lg hover:opacity-90"
           >
             LOGIN
           </button>

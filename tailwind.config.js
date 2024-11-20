@@ -9,10 +9,12 @@ module.exports = {
 				"box-bg": "rgb(var(--color-box))",
 				"box-shadow": "rgb(var(--box-sd))",
 				"box-border": "rgb(var(--box-border))",
-				primary: "#1d4ed8",
+				primary: "",
 				"heading-1": "rgb(var(--heading-1))",
 				"heading-2": "rgb(var(--heading-2))",
 				"heading-3": "rgb(var(--heading-3))",
+				customBlue: '#034a68',
+				customOrange: '#f15d1a',
 			},
 			screens:{
 				midmd:"880px"

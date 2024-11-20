@@ -5,6 +5,7 @@
 body[data-theme='light'] {
   background-color: white;
   color: black;
+    font-family: 'Roboto', sans-serif;
 }
 
 body[data-theme='dark'] {
